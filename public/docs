@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  title: 'API de Ranking de Movimentos'
+  description: 'Esta API permite consultar rankings de movimentos esportivos baseados nos recordes pessoais dos usuários.'
+  version: 1.0.0
+paths:
+  '/api/ranking/{movement_id}':
+    summary: 'Obtém o ranking de um movimento'
+    get:
+      tags:
+        - Ranking
+      summary: 'Obtém o ranking de um movimento'
+      operationId: d81c83a3a1f26d6fdcc30740231c1f0d
+      parameters:
+        -
+          name: movement_id
+          in: path
+          description: 'ID do movimento'
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 'Ranking retornado com sucesso'
+          content:
+            application/json:
+              schema:
+                properties:
+                  movimento: { type: string, example: 'Bench Press' }
+                  ranking: { type: array, items: { properties: { posicao: { type: integer, example: 1 }, usuario: { type: string, example: João }, recorde: { type: number, format: float, example: 180 }, data: { type: string, format: date-time, example: '2021-01-02 00:00:00' } }, type: object } }
+                type: object
+        '404':
+          description: 'Movimento não encontrado'
+tags:
+  -
+    name: Ranking
+    description: Ranking
