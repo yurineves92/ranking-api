@@ -68,6 +68,12 @@ Este projeto é uma API REST simples desenvolvida em **PHP** utilizando o **Slim
 - **Composer**
 - **Swagger** (Documentação da API)
 
+## 📖 Documentação Swagger
+
+Para visualizar a documentação da API, acesse:
+[Swagger UI](http://localhost:8000/swagger)
+
+
 ## 📜 Estrutura do Projeto
 ```
 /
